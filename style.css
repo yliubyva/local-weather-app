@@ -5,3 +5,88 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #fff;
+}
+
+.container {
+  background: url(/weather.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(37, 37, 37, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 105px;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(49, 49, 49, 0.5);
+  backdrop-filter: blur(4.5px);
+}
+
+.container,
+.container::after {
+  border-radius: 10px;
+}
+
+.container,
+.container-blur {
+  position: relative;
+}
+
+.container-blur {
+  z-index: 3;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.input,
+.button {
+  border-radius: 5px;
+}
+
+.group-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.weather-icon {
+  width: 50px;
+  height: 50px;
+}
