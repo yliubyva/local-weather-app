@@ -45,13 +45,14 @@ function getStoredWeatherData() {
     const timestamp = localStorage.getItem('weatherTimestamp');
     const currentTime = new Date().getTime();
 
-    if (weatherData && timestamp) {
-        const timeDifference = currentTime - parseInt(timestamp, 10);
-        if (timeDifference < 2 * 60 * 60 * 1000) {
-            return JSON.parse(weatherData);
-        }
+    if (!weatherData || !timestamp) {
+        return null;
     }
-    return null;
+    const timeDifference = currentTime - parseInt(timestamp, 10);
+    if (timeDifference >= 2 * 60 * 60 * 1000) {
+        return null;
+    }
+    return JSON.parse(weatherData);
 };
 
 function displayWeatherData(data) {
